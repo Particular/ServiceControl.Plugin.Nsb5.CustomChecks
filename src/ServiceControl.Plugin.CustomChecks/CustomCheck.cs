@@ -61,7 +61,7 @@
         {
             if (Builder != null)
             {
-                if (delayExecutionPassTimer != null)
+                if (delayExecutionFailTimer != null)
                 {
                     delayExecutionFailTimer.Dispose();
                 }
