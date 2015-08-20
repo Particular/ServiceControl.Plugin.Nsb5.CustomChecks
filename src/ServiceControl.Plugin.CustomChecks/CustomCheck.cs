@@ -15,6 +15,8 @@
         public UnicastBus UnicastBus { get; set; }
         public CriticalError CriticalError { get; set; }
 
+        Timer delayExecutionPassTimer;
+        Timer delayExecutionFailTimer; 
 
         public IBuilder Builder { get; set; }
         
@@ -40,7 +42,14 @@
             }
             else
             {
-                new Timer(DelayExecutionForPass, null, 2000, -1);
+                if (delayExecutionPassTimer != null)
+                {
+                    delayExecutionPassTimer.Change(2000, -1);
+                }
+                else
+                {
+                    delayExecutionPassTimer = new Timer(DelayExecutionForPass, state, 2000, -1);
+                }
             }
         }
 
@@ -52,7 +61,14 @@
             }
             else
             {
-                new Timer(DelayExecutionForFail, state, 2000, -1);
+                if (delayExecutionFailTimer != null)
+                {
+                    delayExecutionFailTimer.Change(2000, -1);
+                }
+                else
+                {
+                    delayExecutionFailTimer = new Timer(DelayExecutionForFail, state, 2000, -1);
+                }
             }
         }
 

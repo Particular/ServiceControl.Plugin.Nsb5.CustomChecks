@@ -20,6 +20,5 @@
   </metadata>
   <files>
     <file src="..\..\src\ServiceControl.Plugin.CustomChecks\bin\Release\ServiceControl.Plugin.Nsb5.CustomChecks.*" target="lib\net45" />
-    <file src="..\Nuget\tools\install.ps1" target="tools" />
   </files>
 </package>
