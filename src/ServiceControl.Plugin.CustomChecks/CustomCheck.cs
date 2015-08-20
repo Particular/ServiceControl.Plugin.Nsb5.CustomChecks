@@ -38,6 +38,10 @@
         {
             if (Builder != null)
             {
+                if (delayExecutionPassTimer != null)
+                {
+                    delayExecutionPassTimer.Dispose();
+                }
                 ReportToBackend(CheckResult.Pass);
             }
             else
@@ -57,6 +61,10 @@
         {
             if (Builder != null)
             {
+                if (delayExecutionPassTimer != null)
+                {
+                    delayExecutionFailTimer.Dispose();
+                }
                 ReportToBackend(CheckResult.Failed((string)state));
             }
             else
@@ -96,6 +104,5 @@
                 ReportedAt = DateTime.UtcNow
             });
         }
-
     }
 }
