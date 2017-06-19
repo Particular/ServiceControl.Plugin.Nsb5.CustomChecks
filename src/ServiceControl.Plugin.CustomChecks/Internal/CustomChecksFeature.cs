@@ -18,12 +18,12 @@
                 .Where(t => typeof(ICustomCheck).IsAssignableFrom(t) && !(t.IsAbstract || t.IsInterface))
                 .ToList()
                 .ForEach(t => context.Container.ConfigureComponent(t, DependencyLifecycle.InstancePerCall));
-            
+
             context.Settings.GetAvailableTypes()
                 .Where(t => typeof(IPeriodicCheck).IsAssignableFrom(t) && !(t.IsAbstract || t.IsInterface))
                 .ToList()
                 .ForEach(t => context.Container.ConfigureComponent(t, DependencyLifecycle.InstancePerCall));
-         
+
         }
     }
 }

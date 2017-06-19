@@ -16,10 +16,10 @@
         public CriticalError CriticalError { get; set; }
 
         Timer delayExecutionPassTimer;
-        Timer delayExecutionFailTimer; 
+        Timer delayExecutionFailTimer;
 
         public IBuilder Builder { get; set; }
-        
+
         protected CustomCheck(string id, string category)
         {
             Category = category;

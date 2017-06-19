@@ -12,7 +12,6 @@ namespace ServiceControl.Plugin.CustomChecks.Internal
     {
         public TimerBasedPeriodicCheck(IPeriodicCheck periodicCheck, ISendMessages messageSender, Configure configure, UnicastBus unicastBus, CriticalError criticalError)
         {
-
             this.periodicCheck = periodicCheck;
             this.configure = configure;
             this.unicastBus = unicastBus;

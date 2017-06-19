@@ -7,7 +7,6 @@
     {
         public FailingPeriodicCustomCheck(): base("FailingPeriodicCustomCheck", "PeriodicChecks", TimeSpan.FromSeconds(30))
         {
-          
         }
 
         public override CheckResult PerformCheck()
@@ -21,7 +20,6 @@
         public SuccessfulPeriodicCustomCheck()
             : base("SuccessfulPeriodicCustomCheck", "PeriodicChecks", TimeSpan.FromSeconds(30))
         {
-
         }
 
         public override CheckResult PerformCheck()
