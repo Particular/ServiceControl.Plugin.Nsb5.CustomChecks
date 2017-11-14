@@ -3,9 +3,11 @@
     using System.Linq;
     using NServiceBus;
     using NServiceBus.Features;
+    using NServiceBus.Logging;
 
     class CustomChecksFeature : Feature
     {
+        static ILog Log = LogManager.GetLogger<CustomChecksFeature>();
 
         public CustomChecksFeature()
         {
@@ -24,6 +26,7 @@
                 .ToList()
                 .ForEach(t => context.Container.ConfigureComponent(t, DependencyLifecycle.InstancePerCall));
 
+            Log.Warn("The ServiceControl.Plugin.Nsb5.CustomChecks package has been replaced by the NServiceBus.CustomChecks package. See the upgrade guide for more details.");
         }
     }
 }
